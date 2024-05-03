@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Melgueira.ProductApi.Repositories;
 
-public class ProductRepository
+public class ProductRepository : IProductRepository
 {
     private readonly AppDbContext _context;
 

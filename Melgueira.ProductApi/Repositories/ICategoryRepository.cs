@@ -6,7 +6,7 @@ namespace Melgueira.ProductApi.Repositories;
 public interface ICategoryRepository
 {
     Task<IEnumerable<Category>> GetAll();
-    Task<IEnumerable<Category>> GetCategoriesProducts();
+    Task<IEnumerable<Category>> GetById();
     Task<Category> GetById(int id);
     Task<Category> Create(Category category);
     Task<Category> Update(Category category);
