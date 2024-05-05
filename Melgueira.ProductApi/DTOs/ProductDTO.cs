@@ -30,6 +30,8 @@ public class ProductDTO
     public DateTime CreatedAt { get; set; } = DateTime.Now;
     public DateTime? LastUpdatedAt { get; set; }
 
+    public string? CategoryName { get; set; }
+
     [JsonIgnore]
     public Category? Category { get; set; }
     public int CategoryId { get; set; }
