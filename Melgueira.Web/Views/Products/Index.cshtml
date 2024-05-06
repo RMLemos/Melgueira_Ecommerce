@@ -3,14 +3,12 @@
 <div>
     <h2>Products</h2>
 </div>
-<hr />
+
 <div class="row">
     <div class="col-md-12">
         <div>
             <div class="pull-left">
-                <a asp-action="CreateProduct" class="btn btn-primary">
-                    New Product
-                </a>
+                <a asp-action="CreateProduct" class="btn btn-outline-dark mt-5">Add New Product</a>
             </div>
         </div>
     </div>
@@ -24,13 +22,16 @@
                     @Html.DisplayNameFor(model => model.ProductName)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.CategoryName)
-                </th>
-                <th>
                     @Html.DisplayNameFor(model => model.Description)
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.Price)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Stock)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CategoryName)
                 </th>
                 <th></th>
             </tr>
@@ -43,19 +44,20 @@
                         @Html.DisplayFor(modelItem => item.ProductName)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.CategoryName)
-                    </td>
-                    <td>
                         @Html.DisplayFor(modelItem => item.Description)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Price)
                     </td>
                     <td>
-                        <a asp-action="UpdateProduct" asp-route-id="@item.ProductId" title="Edit"> Edit 
-                        </a>
-                        <a asp-action="DeleteProduct" asp-route-id="@item.ProductId" title="Delete"> Delete
-                        </a>
+                        @Html.DisplayFor(modelItem => item.Stock)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CategoryName)
+                    </td>                    
+                    <td>
+                        <a asp-action="UpdateProduct" asp-route-id="@item.ProductId" title="Edit" class="links">Edit</a> |
+                        <a asp-action="DeleteProduct" asp-route-id="@item.ProductId" title="Delete" class="links"> Delete</a>
                     </td>
                 </tr>
             }

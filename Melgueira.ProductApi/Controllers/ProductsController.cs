@@ -49,14 +49,9 @@ public class ProductsController : ControllerBase
         return new CreatedAtRouteResult("GetProduct", new { id = productDto.CategoryId }, productDto);
     }
 
-    [HttpPut("{id}")]
-    public async Task<ActionResult> Put(int id, [FromBody] ProductDTO productDto)
+    [HttpPut()]
+    public async Task<ActionResult> Put([FromBody] ProductDTO productDto)
     {
-        if (id != productDto.ProductId)
-        {
-            return BadRequest();
-        }
-
         if (productDto == null)
             return BadRequest();
 

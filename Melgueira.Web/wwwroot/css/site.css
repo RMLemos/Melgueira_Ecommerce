@@ -18,5 +18,13 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background-color: #E6E5E0;
+}
+
+/*My css*/
+
+.links {
+    text-decoration: none;
+    color: black;
 }

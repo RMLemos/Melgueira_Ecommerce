@@ -78,9 +78,10 @@ public class ProductService : IProductService
     public async Task<ProductViewModel> UpdateProduct(ProductViewModel productVM)
     {
         var client = _clientFactory.CreateClient("ProductApi");
+
         ProductViewModel productUpdated = new ProductViewModel();
 
-        using (var response = await client.PutAsJsonAsync(apiEndpoint, productsVM))
+        using (var response = await client.PutAsJsonAsync(apiEndpoint, productVM))
         {
             if (response.IsSuccessStatusCode)
             {
