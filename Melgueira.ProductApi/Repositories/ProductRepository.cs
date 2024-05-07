@@ -32,6 +32,8 @@ public class ProductRepository : IProductRepository
 
     public async Task<Product> Update(Product product)
     {
+        product.LastUpdatedAt = DateTime.Now;
+
         _context.Entry(product).State = EntityState.Modified;
         await _context.SaveChangesAsync();
         return product;

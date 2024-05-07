@@ -50,13 +50,13 @@ namespace Melgueira.ProductApi.Migrations
                         {
                             CategoryId = 1,
                             CategoryName = "Honey",
-                            CreatedAt = new DateTime(2024, 5, 2, 11, 57, 9, 62, DateTimeKind.Local).AddTicks(3286)
+                            CreatedAt = new DateTime(2024, 5, 7, 15, 30, 31, 752, DateTimeKind.Local).AddTicks(6076)
                         },
                         new
                         {
                             CategoryId = 2,
                             CategoryName = "Beverage",
-                            CreatedAt = new DateTime(2024, 5, 2, 11, 57, 9, 62, DateTimeKind.Local).AddTicks(3337)
+                            CreatedAt = new DateTime(2024, 5, 7, 15, 30, 31, 752, DateTimeKind.Local).AddTicks(6128)
                         });
                 });
 
