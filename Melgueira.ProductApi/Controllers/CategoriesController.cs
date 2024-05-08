@@ -1,13 +1,17 @@
 ﻿using Melgueira.ProductApi.DTOs;
+using Melgueira.ProductApi.Roles;
 using Melgueira.ProductApi.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Melgueira.ProductApi.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
+[Authorize]
 public class CategoriesController : ControllerBase
 {
     private readonly ICategoryService _categoryService;
@@ -76,6 +80,7 @@ public class CategoriesController : ControllerBase
     }
 
     [HttpDelete("{id:int}")]
+    [Authorize(Roles = Role.Admin)]
     public async Task<ActionResult<CategoryDTO>> Delete(int id)
     {
         var categoryDto = await _categoryService.GetCategoryById(id);

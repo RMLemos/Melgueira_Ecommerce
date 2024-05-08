@@ -1,5 +1,7 @@
 ﻿using Melgueira.ProductApi.DTOs;
+using Melgueira.ProductApi.Roles;
 using Melgueira.ProductApi.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,6 +9,7 @@ namespace Melgueira.ProductApi.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
+[Authorize]
 public class ProductsController : ControllerBase
 {
     private readonly IProductService _productService;
@@ -61,6 +64,7 @@ public class ProductsController : ControllerBase
     }
 
     [HttpDelete("{id}")]
+    [Authorize(Roles = Role.Admin)]
     public async Task<ActionResult<ProductDTO>> Delete(int id)
     {
         var productDto = await _productService.GetProductById(id);
